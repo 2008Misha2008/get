@@ -3,10 +3,8 @@ import time
 
 GPIO.setmode(GPIO.BCM)
 
-# Список пинов (от старшего к младшему), учитываем твой GPIO 5 вместо 12
 leds = [16, 5, 25, 17, 27, 23, 22, 24]
 
-# Пины кнопок
 up = 9
 down = 10
 
@@ -33,7 +31,6 @@ try:
 
         if GPIO.input(down):
             num = num - 1
-            # Защита от чисел меньше нуля
             if num < 0:
                 num = 255
             print(num, dec2bin(num))
